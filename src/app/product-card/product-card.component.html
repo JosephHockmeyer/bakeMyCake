@@ -1,0 +1,33 @@
+<mat-card
+  class="product-card"
+  (mouseenter)="displayActions()"
+  (mouseleave)="displayActions()"
+>
+  <mat-card-header>
+    <mat-card-title>{{ cake?.product }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-subtitle>{{ cake?.price }}</mat-card-subtitle>
+
+  <mat-card-content class="product-category">{{
+    cake?.category
+  }}</mat-card-content>
+
+  <mat-card-actions class="cake-actions" *ngIf="showActions">
+    <button mat-icon-button color="primary">
+      <mat-icon>bookmark</mat-icon>
+    </button>
+
+    <button mat-icon-button color="primary">
+      <mat-icon>edit</mat-icon>
+    </button>
+
+    <button mat-icon-button color="primary">
+      <mat-icon>delete</mat-icon>
+    </button>
+
+    <button mat-icon-button color="accent">
+      <mat-icon>notifications</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

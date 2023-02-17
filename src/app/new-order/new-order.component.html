@@ -1,0 +1,60 @@
+<mat-expansion-panel expanded="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>New Order</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="add-order-panel">
+    <form (ngSubmit)="addOrder(addOrderForm)" #addOrderForm="ngForm">
+      <mat-form-field class="product-input-field">
+        <mat-label>Product Name</mat-label>
+        <input
+          type="text"
+          matInput
+          required
+          name="product"
+          [(ngModel)]="cake.product"
+          #product="ngModel"
+        />
+        <div
+          class="error-msg"
+          *ngIf="product?.invalid && (product?.dirty || product?.touched)"
+        >
+          Product name is required
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="product-input-field">
+        <mat-label>Product Quantity</mat-label>
+        <input
+          type="text"
+          matInput
+          required
+          name="quantity"
+          [(ngModel)]="cake.quantity"
+          #quantity="ngModel"
+        />
+        <div
+          class="error-msg"
+          *ngIf="quantity?.invalid && (quantity?.dirty || quantity?.touched)"
+        >
+          Quantity is required
+        </div>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Add Category</mat-label>
+        <input
+          type="text"
+          matInput
+          name="category"
+          [(ngModel)]="cake.category"
+        />
+      </mat-form-field>
+      <div>
+        <button color="primary" mat-mini-fab [disabled]="!addOrderForm.valid">
+          <mat-icon>save</mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</mat-expansion-panel>

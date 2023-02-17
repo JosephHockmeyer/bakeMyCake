@@ -1,0 +1,11 @@
+<app-search (searchTextChanged)="onSearchTextChanged($event)"></app-search>
+<app-product-card *ngFor="let cake of cakes" [cake]="cake"></app-product-card>
+<app-new-order (orderAdded)="onOrderAdded($event)"></app-new-order>
+<button
+  (click)="openAddOrderPanel()"
+  mat-mini-fab
+  color="primary"
+  class="add-button"
+>
+  <mat-icon>add</mat-icon>
+</button>

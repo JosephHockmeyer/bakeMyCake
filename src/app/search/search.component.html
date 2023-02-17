@@ -1,0 +1,14 @@
+<div class="search-bar">
+  <mat-form-field class="input" appearance="outline">
+    <mat-label id="placeholder">Search</mat-label>
+    <input
+      type="text"
+      name="search"
+      matInput
+      placeholder="Enter Product Name"
+      (input)="searchOrders()"
+      [(ngModel)]="searchText"
+    />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</div>
